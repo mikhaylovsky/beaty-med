@@ -23,14 +23,11 @@ export default {
   ** Global CSS
   */
   css: [
-    '~/node_modules/bootstrap/dist/css/bootstrap.css',
-    '@assets/css/style.css'
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@plugins/bootstrap.js'
   ],
   /*
   ** Nuxt.js modules
@@ -38,8 +35,7 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/eslint-module',
-    '@nuxtjs/font-awesome'
+    '@nuxtjs/eslint-module'
   ],
   /*
   ** Axios module configuration
@@ -51,8 +47,6 @@ export default {
   ** Build configuration
   */
   build: {
-    vendor: ['jquery', 'bootstrap'],
-
     /*
     ** You can extend webpack config here
     */
