@@ -30,7 +30,9 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@plugins/bootstrap.js'
+    '@plugins/bootstrap.js',
+    // '@plugins/vue-swiper.js'
+    { src: '@plugins/vue-swiper.js', mode: 'client' }
   ],
   /*
   ** Nuxt.js modules
