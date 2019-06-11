@@ -23,7 +23,8 @@ export default {
   ** Global CSS
   */
   css: [
-    '~/node_modules/bootstrap/dist/css/bootstrap.css'
+    '~/node_modules/bootstrap/dist/css/bootstrap.css',
+    '@assets/css/style.css'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -37,7 +38,8 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/font-awesome'
   ],
   /*
   ** Axios module configuration
