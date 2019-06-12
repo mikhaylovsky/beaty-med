@@ -43,3 +43,16 @@
     </div>
   </nav>
 </template>
+
+<script>
+export default {
+  mounted() {
+    const menu = document.querySelector('.hamburger-menu')
+
+    menu.addEventListener('click', () => {
+      menu.classList.toggle('open')
+      document.querySelector('.site-navigation').classList.toggle('show')
+    })
+  }
+}
+</script>
