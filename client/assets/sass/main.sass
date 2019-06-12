@@ -12,12 +12,6 @@
   .swiper-pagination-bullet
     outline: none
 
-.page-enter-active, .page-leave-active
-  transition: opacity .2s
-
-.page-enter, .page-leave-active
-  opacity: 0
-
 .subscribe-banner
   input[type="submit"]
     margin-top: 10px
@@ -34,3 +28,14 @@
       a.nuxt-link-active
         color: #18a3eb
 
+.accordion-wrap
+  .entry-title
+    .plus
+      &:before
+        content: '-'
+        font-size: 24px
+        font-weight: 400
+    &.collapsed
+      .plus
+        &:before
+          content: '+'

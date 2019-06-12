@@ -27,8 +27,8 @@
 
           <div class="col-12 col-lg-6 mb-5 mb-lg-0">
             <div class="accordion-wrap type-accordion" role="tablist">
-              <h3 v-b-toggle.accordion-1 variant="info" role="tab" class="entry-title d-flex justify-content-between align-items-center active">
-                Elit mir congue ligula et efficitur pellentesqu<span class="arrow-d" />
+              <h3 v-b-toggle.accordion-1 variant="info" role="tab" class="entry-title d-flex justify-content-between align-items-center">
+                Elit mir congue ligula et efficitur pellentesqu<span class="plus" />
               </h3>
 
               <b-collapse id="accordion-1" class="entry-content" visible accordion="my-accordion" role="tabpanel">
@@ -36,7 +36,7 @@
               </b-collapse>
 
               <h3 v-b-toggle.accordion-2 variant="info" role="tab" class="entry-title d-flex justify-content-between align-items-center">
-                Pulvinar elit mi. Integer congue ligula et efficitur <span class="arrow-r" />
+                Pulvinar elit mi. Integer congue ligula et efficitur <span class="plus" />
               </h3>
 
               <b-collapse id="accordion-2" class="entry-content" accordion="my-accordion" role="tabpanel">
@@ -44,7 +44,7 @@
               </b-collapse>
 
               <h3 v-b-toggle.accordion-3 variant="info" role="tab" class="entry-title d-flex justify-content-between align-items-center">
-                Pellentesque pulvinar elit mi. Integer congue<span class="arrow-r" />
+                Pellentesque pulvinar elit mi. Integer congue<span class="plus" />
               </h3>
 
               <b-collapse id="accordion-3" class="entry-content" accordion="my-accordion" role="tabpanel">
