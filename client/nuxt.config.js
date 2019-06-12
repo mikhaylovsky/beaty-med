@@ -24,14 +24,14 @@ export default {
   */
   css: [
     '~/node_modules/bootstrap/dist/css/bootstrap.css',
-    '@assets/css/style.css'
+    '@assets/css/style.css',
+    '@assets/sass/main.sass'
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
     '@plugins/bootstrap.js',
-    // '@plugins/vue-swiper.js'
     { src: '@plugins/vue-swiper.js', mode: 'client' }
   ],
   /*

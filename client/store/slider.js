@@ -6,8 +6,7 @@ export const state = () => ({
     loop: true,
     pagination: {
       el: '.swiper-pagination',
-      clickable: true,
-      renderBullet: render(1, 'test')
+      clickable: true
     },
     navigation: {
       nextEl: '.swiper-button-next',
@@ -16,16 +15,11 @@ export const state = () => ({
   }
 })
 
-const render = (index, className) => {
-  return '<span class="' + className + '">0' + (index + 1) + '</span>'
-}
-
 export const getters = {
   getSlides(state) {
     return state.slides
   },
   getOptions(state) {
-    console.log(state.options.pagination)
     return state.options
   }
 }
@@ -35,8 +29,7 @@ export const mutations = {
     state.slides = slides
   },
   setOptions(state, options) {
-    // state.options = { ...state.options, ...options }
-    state.options = options
+    state.options = { ...state.options, ...options }
   }
 }
 
