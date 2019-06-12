@@ -21,6 +21,8 @@
     </header>
 
     <nuxt />
+
+    <NewsSubscription />
   </div>
 </template>
 
@@ -29,12 +31,14 @@ import { mapGetters } from 'vuex'
 import NavBar from '~/components/NavBarComponent'
 import Breadcrumbs from '~/components/BreadcrumbsComponent'
 import Slider from '~/components/SliderComponent'
+import NewsSubscription from '~/components/NewsSubscriptionComponent'
 
 export default {
   components: {
     NavBar,
     Breadcrumbs,
-    Slider
+    Slider,
+    NewsSubscription
   },
   computed: mapGetters({
     pageTitle: 'page/getTitle',
