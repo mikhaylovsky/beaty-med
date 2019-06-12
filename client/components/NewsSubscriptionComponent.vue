@@ -43,7 +43,6 @@ export default {
           }
         })
         .catch((error) => {
-          console.log(error.response)
           this.error = 'Server error, please try again later!'
         })
 
