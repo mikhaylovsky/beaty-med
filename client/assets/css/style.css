@@ -401,9 +401,6 @@ a:hover, a:active {
 /*
 # Content
 ----------------------------------*/
-.accordion-wrap .entry-content {
-    display: none;
-}
 
 .accordion-wrap .entry-content p {
     padding: 10px 0;
