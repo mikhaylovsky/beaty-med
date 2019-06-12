@@ -23,6 +23,8 @@
     <nuxt />
 
     <NewsSubscription />
+
+    <Footer />
   </div>
 </template>
 
@@ -32,13 +34,15 @@ import NavBar from '~/components/NavBarComponent'
 import Breadcrumbs from '~/components/BreadcrumbsComponent'
 import Slider from '~/components/SliderComponent'
 import NewsSubscription from '~/components/NewsSubscriptionComponent'
+import Footer from '~/components/FooterComponent'
 
 export default {
   components: {
     NavBar,
     Breadcrumbs,
     Slider,
-    NewsSubscription
+    NewsSubscription,
+    Footer
   },
   computed: mapGetters({
     pageTitle: 'page/getTitle',

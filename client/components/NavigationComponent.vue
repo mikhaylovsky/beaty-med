@@ -1,8 +1,8 @@
 <template>
   <nav class="site-navigation d-flex justify-content-end align-items-center">
     <ul class="d-flex flex-column flex-lg-row justify-content-lg-end align-items-center">
-      <li class="current-menu-item">
-        <nuxt-link :to="{ name: 'index' }">
+      <li>
+        <nuxt-link :to="{ name: 'index' }" exact>
           Home
         </nuxt-link>
       </li>
