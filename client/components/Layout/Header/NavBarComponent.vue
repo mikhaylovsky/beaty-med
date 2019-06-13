@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import Navigation from '~/components/NavigationComponent'
+import Navigation from '~/components/Layout/Header/NavigationComponent'
 
 export default {
   components: {

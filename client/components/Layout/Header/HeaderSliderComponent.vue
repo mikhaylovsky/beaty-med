@@ -52,10 +52,9 @@ export default {
   },
   beforeMount() {
     const render = this.options.renderPagination || false
-
     if (render) {
       this.options.pagination.renderBullet = (index, className) => {
-        return '<span class="' + className + '">0' + (index + 1) + '</span>'
+        return `<span class="${className}">0${(index + 1)}</span>`
       }
     }
   }
