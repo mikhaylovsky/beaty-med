@@ -2,7 +2,7 @@
   <div class="breadcrumbs">
     <ul class="d-flex flex-wrap align-items-center p-0 m-0">
       <li v-for="(breadcrumb, index) in breadcrumbs" :key="index">
-        <nuxt-link v-if="breadcrumb.active" :to="{ name: breadcrumb.route }">
+        <nuxt-link v-if="breadcrumb.active" :to="{ name: breadcrumb.route, params: breadcrumb.params }">
           {{ breadcrumb.name }}
         </nuxt-link>
         <span v-else>{{ breadcrumb.name }}</span>

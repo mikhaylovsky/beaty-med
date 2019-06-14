@@ -17,7 +17,7 @@
         </div>
       </div>
 
-      <img v-if="(pageType === 'single-page')" class="header-img" :src="`images/${pageBackground}`" alt="">
+      <img v-if="(pageType === 'single-page')" class="header-img" :src="`/images/${pageBackground}`" alt="">
     </header>
 
     <nuxt />

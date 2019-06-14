@@ -1,14 +1,16 @@
 <template>
   <div class="the-news">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <h2>The News</h2>
+    <div class="row">
+      <BlogPost v-for="post in posts" :key="post.id" :post="post" />
 
-          <div class="row">
-            <BlogPost v-for="post in posts" :key="post.id" :post="post" :cols="3" />
-          </div>
-        </div>
+      <div class="col-12">
+        <ul class="pagination d-flex flex-wrap align-items-center justify-content-center p-0">
+          <li class="active">
+            <a href="#">01</a>
+          </li>
+          <li><a href="#">02</a></li>
+          <li><a href="#">03</a></li>
+        </ul>
       </div>
     </div>
   </div>
@@ -26,7 +28,24 @@ export default {
       posts: []
     }
   },
+  fetch({ store, params }) {
+    store.dispatch('page/setTitle', 'News')
+    store.dispatch('page/setType', 'single-page')
+    store.dispatch('page/setBackground', 'news-bg.png')
+    store.dispatch('page/setBreadcrumbs', [
+      {
+        name: 'Home',
+        route: 'index',
+        active: true
+      },
+      {
+        name: 'News',
+        route: 'news'
+      }
+    ])
+  },
   created() {
+    // asyncData method to get all posts from this category
     this.posts = [
       {
         id: 1,
