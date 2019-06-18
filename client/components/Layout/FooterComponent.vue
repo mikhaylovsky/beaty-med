@@ -54,7 +54,7 @@
                   </nuxt-link>
                 </li>
                 <li>
-                  <nuxt-link :to="{ name: 'news' }">
+                  <nuxt-link :to="{ name: 'blog-category-page' }">
                     News
                   </nuxt-link>
                 </li>

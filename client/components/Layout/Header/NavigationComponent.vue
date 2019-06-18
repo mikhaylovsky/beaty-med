@@ -17,7 +17,7 @@
         </nuxt-link>
       </li>
       <li>
-        <nuxt-link :to="{ name: 'news-index' }">
+        <nuxt-link :to="{ name: 'blog-category-page' }">
           News
         </nuxt-link>
       </li>

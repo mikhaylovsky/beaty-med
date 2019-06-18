@@ -12,7 +12,7 @@
             <div class="row h-100">
               <div class="col-12 col-lg-6 d-flex flex-column justify-content-center align-items-start">
                 <div class="entry-header">
-                  <h1 v-html="slide.title"></h1>
+                  <h1 v-html="slide.title" />
                 </div>
 
                 <div class="entry-content mt-4">
@@ -20,7 +20,9 @@
                 </div>
 
                 <div class="entry-footer d-flex flex-wrap align-items-center mt-4">
-                  <nuxt-link :to="{ name: slide.route }" class="button gradient-bg">Read More</nuxt-link>
+                  <nuxt-link :to="{ name: slide.route }" class="button gradient-bg">
+                    Read More
+                  </nuxt-link>
                 </div>
               </div>
             </div>

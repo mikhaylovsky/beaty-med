@@ -5,7 +5,7 @@
     </h2>
 
     <ul class="p-0 m-0">
-      <li v-for="(day, index) in days" :key="index" v-html="day"></li>
+      <li v-for="(day, index) in days" :key="index" v-html="day" />
     </ul>
   </div>
 </template>

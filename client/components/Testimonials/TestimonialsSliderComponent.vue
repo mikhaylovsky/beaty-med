@@ -25,7 +25,7 @@
               <div class="container">
                 <div class="row">
                   <div class="col-12">
-                    <div class="testimonials-swiper-pagination position-relative flex justify-content-center align-items-center"></div>
+                    <div class="testimonials-swiper-pagination position-relative flex justify-content-center align-items-center" />
                   </div>
                 </div>
               </div>

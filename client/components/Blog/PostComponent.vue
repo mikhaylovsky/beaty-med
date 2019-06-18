@@ -2,7 +2,7 @@
   <div :class="wrapClass">
     <div class="the-news-wrap">
       <figure class="post-thumbnail">
-        <nuxt-link :to="{ name: 'news-slug', params: { slug: post.slug } }">
+        <nuxt-link :to="{ name: 'news-post-slug', params: { slug: post.slug } }">
           <img :src="post.image" alt="">
         </nuxt-link>
       </figure>
@@ -17,7 +17,7 @@
           </div>
 
           <div class="post-comments">
-            <nuxt-link :to="{ name: 'news-slug', params: { slug: post.slug }, hash: '#comments' }">
+            <nuxt-link :to="{ name: 'news-post-slug', params: { slug: post.slug }, hash: '#comments' }">
               2 Comments
             </nuxt-link>
           </div>
