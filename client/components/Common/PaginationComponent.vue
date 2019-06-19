@@ -2,19 +2,25 @@
   <div class="col-12">
     <ul class="pagination d-flex flex-wrap align-items-center justify-content-center p-0">
       <li class="prev">
-        <a v-if="currentPage !== 1" href="#">
+        <nuxt-link
+          v-if="currentPage !== 1"
+          :to="{ name: 'blog-category-page', params: { category: $route.params.category || null, page: currentPage - 1 } }"
+        >
           <i class="fa fa-long-arrow-left" />
-        </a>
+        </nuxt-link>
       </li>
-      <li v-for="n in countPages" :key="n" :class="{ active: (n === currentPage) }">
-        <a href="#">
+      <li v-for="n in pages" :key="n" :class="{ active: (n === currentPage) }">
+        <nuxt-link :to="{ name: 'blog-category-page', params: { category: $route.params.category || null, page: n } }">
           <span v-if="n < 10">0</span><span>{{ n }}</span>
-        </a>
+        </nuxt-link>
       </li>
       <li class="next">
-        <a href="#">
+        <nuxt-link
+          v-if="currentPage !== lastPage"
+          :to="{ name: 'blog-category-page', params: { category: $route.params.category || null, page: currentPage + 1 } }"
+        >
           <i class="fa fa-long-arrow-right" />
-        </a>
+        </nuxt-link>
       </li>
     </ul>
   </div>
@@ -44,20 +50,18 @@ export default {
   },
   data() {
     return {
-      countPages: 0
+      pages: [],
+      lastPage: null
     }
   },
   created() {
     this.countPages = Math.ceil(this.countItems / this.perPage)
-    // console.log(this.$route)
-    const limit = this.currentPage + 3
-    if (this.countPages > limit) {
-      this.countPages = limit
+    const start = ((this.currentPage - 3) > 0) ? (this.currentPage - 3) : 1
+    this.lastPage = ((this.currentPage + 3) < this.countPages) ? this.currentPage + 3 : this.countPages
+
+    for (let i = start; i <= this.lastPage; i++) {
+      this.pages.push(i)
     }
-  },
-  mounted() {
-    // window.history.pushState({ id: 'blog-page' }, 'Page 2', this.$route.fullPath + this.currentPage)
-    console.log(this.$route)
   }
 }
 </script>

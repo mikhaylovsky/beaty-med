@@ -3,17 +3,26 @@
     <div class="row">
       <BlogPost v-for="post in posts" :key="post.id" :post="post" />
 
-      <!--<Pagination :countItems="85" :perPage="4" :currentPage="5" />-->
+      <Pagination :count-items="85" :per-page="4" :current-page="parseInt($route.params.page || 1)" />
     </div>
   </div>
 </template>
 
 <script>
 import BlogPost from '~/components/Blog/PostComponent'
+import Pagination from '~/components/Common/PaginationComponent'
+
 export default {
-  name: 'GridComponent',
   components: {
-    BlogPost
+    BlogPost,
+    Pagination
+  },
+  data() {
+    return {
+      countItems: 0,
+      perPage: 0,
+      currentPage: 0
+    }
   },
   created() {
     // asyncData method to get all posts from this category
@@ -89,6 +98,8 @@ export default {
           break
       }
     }
+
+    this.countItems = this.posts.length
   }
 }
 </script>

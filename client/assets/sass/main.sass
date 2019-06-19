@@ -1,3 +1,5 @@
+@import '_partials/animation'
+
 .site-navigation
   ul li a
     border: 0
@@ -53,9 +55,5 @@
     &.nuxt-link-active
       color: #18a3eb
 
-.news-categories-enter-active, .news-categories-leave-active
-  transition: opacity .3s ease
-
-.news-categories-enter, .news-categories-leave-to
-  opacity: 0
-
+.the-news
+  animation: fadein .5s

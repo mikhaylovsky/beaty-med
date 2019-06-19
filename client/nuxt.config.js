@@ -43,33 +43,16 @@ export default {
     '@nuxtjs/font-awesome'
   ],
   router: {
+    // Manually add children to blog page for reactive filtration by categories
     extendRoutes(routes, resolve) {
-      // const indexIndex = routes.findIndex(route => route.name === 'index')
-      // let index = routes[indexIndex].children.findIndex(route => route.name === 'index-child-id')
-      // routes[indexIndex].children[index] = {
-      //   ...routes[indexIndex].children[index],
-      //   components: {
-      //     default: routes[indexIndex].children[index].component,
-      //     left: resolve(__dirname, 'components/childLeft.vue')
-      //   },
-      //   chunkNames: {
-      //     left: 'components/childLeft'
-      //   }
-      // }
-
       const index = routes.findIndex(route => route.name === 'blog-category-page')
-      // const defaultComponent = routes[index].component
       routes[index] = {
-        // ...routes[index],
         path: routes[index].path,
         component: routes[index].component,
         children: [{
           path: '',
-          component: resolve(__dirname, 'components/GridComponent.vue'),
+          component: resolve(__dirname, 'components/Blog/BlogGridComponent.vue'),
           name: routes[index].name
-          // chunkNames: {
-          //   grid: 'components/GridComponent'
-          // }
         }]
       }
     }
