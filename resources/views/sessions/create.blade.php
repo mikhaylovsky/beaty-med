@@ -14,7 +14,7 @@
 
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" name="password" id="password" class="form-control"></input>
+                <input type="password" name="password" id="password" class="form-control" required></input>
             </div>
 
             <div class="form-group">
@@ -24,6 +24,11 @@
         <div class="form-group">
             <a href="/register" class="btn btn-primary">Registration</a>
         </div>
+        <div class="form-group">
+            <a href="/reset" class="btn btn-primary">Forgot password?</a>
+        </div>
+
+        @include ('layouts.errors')
 
     </div>
 @endsection

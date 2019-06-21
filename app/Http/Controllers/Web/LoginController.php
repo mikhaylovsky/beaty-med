@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Web;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class SessionsController extends Controller
+class LoginController extends Controller
 {
 
     public function __construct()

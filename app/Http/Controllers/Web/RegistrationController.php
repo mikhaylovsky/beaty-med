@@ -26,13 +26,11 @@ class RegistrationController extends Controller
 
     public function store(Request $request)
     {
-
         $this->validate(request(), [
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
         ]);
-
 
         $user = User::create([
             'name' => $request['name'],
@@ -41,10 +39,9 @@ class RegistrationController extends Controller
         ]);
 
         auth()->login($user);
-//        Mail::to($user)->send(new Welcome($user));
 
-//        return redirect('/login');
-        return redirect()->home();
+        \Mail::to($user)->send(new Welcome($user));
 
+        return redirect('/login');
     }
 }

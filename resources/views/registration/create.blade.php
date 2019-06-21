@@ -19,12 +19,12 @@
             <div class="form-group">
                 <label for="password_confirmation">Password</label>
                 <input type="password" name="password_confirmation" id="password_confirmation"
-                       class="form-control"></input>
+                       class="form-control" required></input>
             </div>
 
             <div class="form-group">
                 <label for="password">Password Confirmation</label>
-                <input type="password" name="password" id="password" class="form-control"></input>
+                <input type="password" name="password" id="password" class="form-control" required></input>
             </div>
 
 

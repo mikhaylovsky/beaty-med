@@ -11,15 +11,20 @@ Route::group([
 
     Route::get('/settings', 'SettingsController@index');
 
-    Route::get('/login', 'SessionsController@create');
+    Route::get('/login', 'LoginController@create');
+    Route::post('/login', 'LoginController@store');
 
-    Route::post('/login', 'SessionsController@store');
-
-    Route::get('/logout', 'SessionsController@destroy');
+    Route::get('/logout', 'LoginController@destroy');
 
     Route::get('/register', 'RegistrationController@create');
-
     Route::post('/register', 'RegistrationController@store');
+
+    Route::get('reset/{token}', 'ResetForm@showResetForm');
+    Route::post('password/reset', 'ResetForm@reset');
+
+    Route::get('/reset', 'ResetPasswordController@index');
+    Route::post('/reset', 'ResetPasswordController@postEmail')->name('password.reset');
+
 
 });
 
