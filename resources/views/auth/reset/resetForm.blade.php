@@ -23,7 +23,7 @@
 
                                     <div class="col-md-6">
                                         <input id="email" type="email" class="form-control" name="email"
-                                               value="{{ $email }}" required autofocus>
+                                               value="" required autofocus>
 
                                         @if ($errors->has('email'))
                                             <span class="help-block">

@@ -1,5 +1,7 @@
 <?php
 
+use App\Seller;
+
 return [
 
     /*
@@ -46,6 +48,11 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+
+        'web_seller' => [
+            'driver' => 'session',
+            'provider' => 'sellers',
+        ],
     ],
 
     /*
@@ -68,13 +75,14 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\Models\User::class,
+            'model' => App\Http\Models\User::class,
         ],
 
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
         // ],
+
     ],
 
     /*
@@ -96,6 +104,22 @@ return [
         'users' => [
             'provider' => 'users',
             'table' => 'password_resets',
+            'expire' => 60,
+        ],
+        'reusers' => [
+            //user provider for seller
+            'provider' => 'reusers',
+            //table to store password reset tokens for seller
+            'table' => 're_users_password_resets',
+            //expire time for these tokens in minutes
+            'expire' => 60,
+        ],
+        'sellers' => [
+            //user provider for seller
+            'provider' => 'sellers',
+            //table to store password reset tokens for seller
+            'table' => 'seller_password_resets',
+            //expire time for these tokens in minutes
             'expire' => 60,
         ],
     ],

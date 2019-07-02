@@ -22,10 +22,10 @@
             </div>
         </form>
         <div class="form-group">
-            <a href="/register" class="btn btn-primary">Registration</a>
+            <a href="/register" class="btn btn-info">Registration</a>
         </div>
         <div class="form-group">
-            <a href="/reset" class="btn btn-primary">Forgot password?</a>
+            <a href="/reset" class="btn btn-info">Forgot password?</a>
         </div>
 
         @include ('layouts.errors')

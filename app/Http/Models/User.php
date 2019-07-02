@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Models;
+namespace App\Http\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use App\Notifications\ResetPasswordEmail;
+use App\Notifications\ResetPasswordEmailNotification;
 
-class User  extends Authenticatable
+class User extends Authenticatable
 {
     use Notifiable;
 
@@ -40,6 +40,6 @@ class User  extends Authenticatable
     //Send password reset notification
     public function sendPasswordResetNotification($token)
     {
-        $this->notify(new ResetPasswordEmail($token));
+        $this->notify(new ResetPasswordEmailNotification($token));
     }
 }

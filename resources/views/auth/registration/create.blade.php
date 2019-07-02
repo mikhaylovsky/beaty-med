@@ -33,8 +33,10 @@
             </div>
         </form>
         <div class="form-group">
-            <a href="/login" class="btn btn-primary">Sign In</a>
+            <a href="/login" class="btn btn-info">Sign In</a>
         </div>
+
+        @include ('layouts.errors')
     </div>
 
 @endsection

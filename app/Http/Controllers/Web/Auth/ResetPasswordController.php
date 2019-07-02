@@ -3,37 +3,35 @@
 namespace App\Http\Controllers\Web\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\ResetsPasswords;
+use App\Mail\Welcome;
+use App\Http\Models\User;
+use App\Notifications\ResetPasswordEmailNotification;
+use Illuminate\Http\Request;
+use Illuminate\Notifications\Notification;
+use Illuminate\Support\Facades\Password;
+use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 
 class ResetPasswordController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Password Reset Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller is responsible for handling password reset requests
-    | and uses a simple trait to include this behavior. You're free to
-    | explore this trait and override any methods you wish to tweak.
-    |
-    */
+    use SendsPasswordResetEmails;
 
-    use ResetsPasswords;
-
-    /**
-     * Where to redirect users after resetting their password.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/home';
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public function showLinkRequestForm()
     {
-        $this->middleware('guest');
+        return view('auth.reset.reset');
+    }
+
+//    public function sendResetLinkEmail(Request $request)
+//    {
+//        $user = User::where('email', $request['email'])->first();
+//
+//        $user->notify(new ResetPasswordEmailNotification($request->only('_token')));
+//
+//        return response()->json(['message' => 'Reset link sent to your email.', 'status' => true], 201);
+//    }
+
+    //returns Password broker of users
+    public function broker()
+    {
+        return Password::broker('users');
     }
 }

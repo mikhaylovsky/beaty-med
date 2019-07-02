@@ -7,7 +7,7 @@
                 <div class="col-sm-12 user-main">
                     <div class="card">
                         <div class="card-header card-header-primary">
-                            <h4 class="card-title">Users Prufiles</h4>
+                            <h4 class="card-title">Users Profiles</h4>
                         </div>
                         @foreach($users as $user)
                             @include('users.user')

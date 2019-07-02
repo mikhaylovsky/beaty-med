@@ -26,6 +26,10 @@
 
         </form>
 
+        <div class="form-group">
+            <a href="/login" class="btn btn-info">Sign In</a>
+        </div>
+
         @include ('layouts.errors')
 
     </div>

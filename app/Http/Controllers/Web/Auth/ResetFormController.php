@@ -1,10 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Web;
+namespace App\Http\Controllers\Web\Auth;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
 //Auth Facade
@@ -14,7 +13,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Password;
 
 
-class ResetForm extends Controller
+class ResetFormController extends Controller
 {
     protected $redirectTo = '/';
 
@@ -24,8 +23,8 @@ class ResetForm extends Controller
     //Show form to seller where they can save new password
     public function showResetForm(Request $request, $token = null)
     {
-        return view('sessions.resetForm')->with(
-            ['token' => $token, 'email' => $request->email]
+        return view('auth.reset.resetForm')->with(
+            ['token' => $token, 'email' => 'alex.guravlev1988@gmail.com']
         );
     }
 
@@ -38,6 +37,6 @@ class ResetForm extends Controller
     //returns authentication guard of seller
     protected function guard()
     {
-        return Auth::guard('web_users');
+        return Auth::guard('web');
     }
 }

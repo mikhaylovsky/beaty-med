@@ -24,15 +24,19 @@
                 </a>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="./tables.html">
+                <a class="nav-link" href="#" id="navbarDropdownPosts" data-toggle="dropdown">
                     <i class="material-icons">content_paste</i>
-                    <p>Table List</p>
+                    <p>Posts</p>
                 </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownPosts">
+                    <a class="dropdown-item" href="/posts">Posts</a>
+                    <a class="dropdown-item" href="/posts/create">Add Post</a>
+                </div>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="./typography.html">
+                <a class="nav-link" href="/category">
                     <i class="material-icons">library_books</i>
-                    <p>Typography</p>
+                    <p>Category</p>
                 </a>
             </li>
             <li class="nav-item ">
