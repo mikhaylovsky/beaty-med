@@ -1,5 +1,5 @@
 <template>
-  <div class="emergency-box">
+  <div class="emergency-box h-100">
     <h2 class="d-flex align-items-center">
       Emergency
     </h2>

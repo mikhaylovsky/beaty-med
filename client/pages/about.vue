@@ -84,6 +84,7 @@
       </div>
     </div>
 
+    <!-- TODO Move this to components and make it dynamic with loop -->
     <div class="medical-team">
       <div class="container">
         <div class="row">
