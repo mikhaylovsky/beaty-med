@@ -24,7 +24,7 @@ class ResetFormController extends Controller
     public function showResetForm(Request $request, $token = null)
     {
         return view('auth.reset.resetForm')->with(
-            ['token' => $token, 'email' => 'alex.guravlev1988@gmail.com']
+            ['token' => $token, 'email' => $request['email']]
         );
     }
 

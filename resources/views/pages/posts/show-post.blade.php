@@ -10,24 +10,22 @@
                         <div class="card-header card-header-primary">
                             <h4 class="card-title">Posts</h4>
                         </div>
-                        @foreach($posts as $post)
-                            <div class="blog-post">
-                                <h2 class="blog-post-title">
-                                    {{$post->title}}
-                                </h2>
+                        <div class="card-body">
+                            <h2 class="blog-post-title">
+                                {{$post->title}}
+                            </h2>
 
-                                <p class="blog-post-meta">
-                                    <!-- Carbon library -->
-                                    {{$post->user->name}}
+                            <p class="blog-post-meta">
+                                <!-- Carbon library -->
+                                {{$post->user->name}}
 
-                                    {{$post->created_at->toFormattedDateString()}}
-                                </p>
+                                {{$post->created_at->toFormattedDateString()}}
+                            </p>
 
-                                <p>
-                                    {{$post->body}}
-                                </p>
-                            </div>
-                        @endforeach
+                            <p>
+                                {{$post->body}}
+                            </p>
+                        </div>
                     </div>
 
                 </div>

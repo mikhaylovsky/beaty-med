@@ -1,5 +1,5 @@
 <div class="user-list">
-    <ol>
+    <ul>
         <li> {{$user->name}} ->  {{$user->email}} </li>
-    </ol>
+    </ul>
 </div>

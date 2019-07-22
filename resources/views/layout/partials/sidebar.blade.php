@@ -5,7 +5,7 @@
       Tip 2: you can also add an image using data-image tag
   -->
     <div class="logo">
-        <a href="http://www.creative-tim.com" class="simple-text logo-normal">
+        <a href="#" class="simple-text logo-normal">
             Creative Tim
         </a>
     </div>
@@ -34,10 +34,14 @@
                 </div>
             </li>
             <li class="nav-item ">
-                <a class="nav-link" href="/category">
+                <a class="nav-link" href="#" id="navbarDropdownCategories" data-toggle="dropdown">
                     <i class="material-icons">library_books</i>
                     <p>Category</p>
                 </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownCategories">
+                    <a class="dropdown-item" href="/categories">Categories</a>
+                    <a class="dropdown-item" href="/category/create">Add Category</a>
+                </div>
             </li>
             <li class="nav-item ">
                 <a class="nav-link" href="./icons.html">

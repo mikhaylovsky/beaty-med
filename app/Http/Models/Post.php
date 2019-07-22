@@ -55,5 +55,4 @@ class Post extends Eloquent
 //    {
 //        return $this->belongsToMany(Tag::class, 'post_tags');
 //    }
-
 }

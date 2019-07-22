@@ -7,17 +7,20 @@
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-header card-header-primary">
-                            <h4 class="card-title">Posts</h4>
+                            <h4 class="card-title">Categories</h4>
                         </div>
                         <div class="card-body">
-                            @foreach($posts as $post)
+                            @foreach($categories as $category)
                                 <ul>
                                     <li>
-                                        <a href="/posts/{{$post->id}}">
-                                            {{$post->title}}
+                                        <a href="/category/{{$category->id}}">
+                                            {{$category->name}}
                                         </a>
                                     </li>
                                 </ul>
+                                <h2 class="blog-post-title">
+
+                                </h2>
                             @endforeach
                         </div>
                     </div>
@@ -25,4 +28,5 @@
             </div>
         </div>
     </div>
+
 @endsection

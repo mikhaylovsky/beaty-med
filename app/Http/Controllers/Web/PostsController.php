@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Web;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Models\Post;
-
 use Carbon\Carbon;
 use App\Repositories\Posts;
 
@@ -19,14 +18,15 @@ class PostsController extends Controller
 
     public function index()
     {
-        $posts =  Post::all();
+        $posts = Post::all();
 
         return view('pages.posts.all-posts', compact('posts'));
     }
 
     public function show(Post $post)
     {
-        return view('pages.posts.show', compact('post'));
+        dd($post);
+        return view('pages.posts.show-post', compact('post'));
     }
 
     public function create()
@@ -40,10 +40,6 @@ class PostsController extends Controller
             'title' => 'required',
             'body' => 'required'
         ]);
-//        dd(auth()->id());
-        auth()->user()->publish(
-            new Post(request( ['title', 'body']))
-        );
 
         session()->flash('message', 'Your post has now been published.');
 
