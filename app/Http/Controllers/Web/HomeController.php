@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Web;
 
 use App\Http\Models\User;
 use Illuminate\Http\Request;
-use Auth;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 
 class HomeController extends Controller

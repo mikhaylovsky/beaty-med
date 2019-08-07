@@ -10,3 +10,9 @@
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+Route::middleware('auth:api')->group(function () {
+    Route::get('dashboard', function () {
+        return response()->json(['data' => 'Test Data']);
+    });
+});

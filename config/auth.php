@@ -1,6 +1,6 @@
 <?php
 
-use App\Seller;
+//use App\Seller;
 
 return [
 
@@ -17,6 +17,7 @@ return [
 
     'defaults' => [
         'guard' => 'web',
+//        'guard' => 'api',
         'passwords' => 'users',
     ],
 
@@ -44,9 +45,10 @@ return [
         ],
 
         'api' => [
-            'driver' => 'token',
+//            'driver' => 'token',
+            'driver' => 'jwt',
             'provider' => 'users',
-            'hash' => false,
+//            'hash' => false,
         ],
 
         'web_seller' => [

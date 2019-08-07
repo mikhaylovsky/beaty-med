@@ -10,7 +10,7 @@ use App\Http\Models\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 //Auth facade
-use Auth;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -29,7 +29,8 @@ class LoginController extends Controller
 
     public function store(Request $request)
     {
-        if (!auth()->attempt(request(['email', 'password']))) {
+
+        if (!auth('web')->attempt(request(['email', 'password']))) {
             return back()->withErrors([
                 'message' => 'Please check your credentials and try again.'
 
@@ -46,7 +47,7 @@ class LoginController extends Controller
 
     public function destroy()
     {
-        auth()->logout();
+        auth('web')->logout();
         return redirect('/login');
     }
 }

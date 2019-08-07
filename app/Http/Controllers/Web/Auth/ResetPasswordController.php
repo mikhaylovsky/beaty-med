@@ -20,14 +20,14 @@ class ResetPasswordController extends Controller
         return view('auth.reset.reset');
     }
 
-//    public function sendResetLinkEmail(Request $request)
-//    {
-//        $user = User::where('email', $request['email'])->first();
-//
-//        $user->notify(new ResetPasswordEmailNotification($request->only('_token')));
-//
-//        return response()->json(['message' => 'Reset link sent to your email.', 'status' => true], 201);
-//    }
+    public function sendResetLinkEmail(Request $request)
+    {
+        $user = User::where('email', $request['email'])->first();
+
+        $user->notify(new ResetPasswordEmailNotification($request->only('_token')['_token']));
+
+        return response()->json(['message' => 'Reset link sent to your email.', 'status' => true], 201);
+    }
 
     //returns Password broker of users
     public function broker()

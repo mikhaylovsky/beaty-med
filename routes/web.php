@@ -46,3 +46,20 @@ Route::group([
 
 });
 
+
+Route::group([
+    'middleware' => ['api'],
+    'namespace' => 'Api',
+    'prefix' => 'api'
+], function () {
+
+    Route::get('/', function () {
+        return view('app');
+    });
+
+    Route::post('/login', 'Auth\AuthController@login');
+    Route::post('/logout', 'Auth\AuthController@logout');
+    Route::post('/refresh', 'Auth\AuthController@refresh');
+    Route::post('/me', 'Auth\AuthController@me');
+});
+
