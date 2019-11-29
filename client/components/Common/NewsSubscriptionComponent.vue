@@ -27,6 +27,7 @@ export default {
     return {
       email: '',
       error: '',
+      errorState: 0,
       success: ''
     }
   },
@@ -42,7 +43,8 @@ export default {
             this.error = response.data.message
           }
         })
-        .catch(() => {
+        .catch((error) => {
+          this.errorState = error.response.status || 0
           this.error = 'Server error, please try again later!'
         })
 

@@ -1,9 +1,48 @@
 <template>
-  <main />
+  <main>
+    <div class="homepage-boxes">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-4">
+            <WorkingHoursBox />
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-3 mt-5 mt-md-0">
+            <EmergencyBox />
+          </div>
+
+          <div class="col-12 col-md-6 col-lg-5 mt-5 mt-lg-0">
+            <AppointmentBox />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <Departments />
+
+    <Testimonials />
+
+    <LatestBlogPosts />
+  </main>
 </template>
 
 <script>
+import WorkingHoursBox from '~/components/Common/WorkingHoursBoxComponent'
+import EmergencyBox from '~/components/Common/EmergencyBoxComponent'
+import AppointmentBox from '~/components/Common/AppointmentBoxComponent'
+import Departments from '~/components/Services/DepartmentsComponent'
+import Testimonials from '~/components/Testimonials/TestimonialsComponent'
+import LatestBlogPosts from '~/components/Blog/LatestPostsComponent'
+
 export default {
+  components: {
+    WorkingHoursBox,
+    EmergencyBox,
+    AppointmentBox,
+    Departments,
+    Testimonials,
+    LatestBlogPosts
+  },
   fetch({ store }) {
     store.dispatch('slider/setSlides', [
       {

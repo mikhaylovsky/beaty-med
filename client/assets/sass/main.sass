@@ -1,9 +1,11 @@
+@import '_partials/animation'
+
 .site-navigation
-  ul
-    li
-      a
-        border: 0
-        outline: none
+  ul li a
+    border: 0
+    outline: none
+    &.nuxt-link-active
+      color: #18a3eb
 
 .breadcrumbs a
   outline: none
@@ -11,12 +13,6 @@
 .swiper-pagination-clickable
   .swiper-pagination-bullet
     outline: none
-
-.page-enter-active, .page-leave-active
-  transition: opacity .2s
-
-.page-enter, .page-leave-active
-  opacity: 0
 
 .subscribe-banner
   input[type="submit"]
@@ -28,11 +24,36 @@
   .success-text
     color: #00F1FE
 
-.site-navigation
-  ul
+.accordion-wrap
+  .entry-title
+    .plus
+      &:before
+        content: '-'
+        font-size: 24px
+        font-weight: 400
+    &.collapsed
+      .plus
+        &:before
+          content: '+'
+
+.testimonials-swiper-pagination
+  text-align: center
+
+.appointment-box
+  ul.errors
     li
-      a.nuxt-link-active
-        color: #18a3eb
+      font-size: 12px
+      color: #ff0000
+  div.success
+    p
+      color: #008000
+      font-size: 12px
 
+.sidebar-cats
+  ul li a
+    outline: none
+    &.nuxt-link-active
+      color: #18a3eb
 
-
+.the-news
+  animation: fadein .5s

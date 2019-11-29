@@ -17,7 +17,7 @@
         </nuxt-link>
       </li>
       <li>
-        <nuxt-link :to="{ name: 'news' }">
+        <nuxt-link :to="{ name: 'blog-category-page' }">
           News
         </nuxt-link>
       </li>
@@ -43,3 +43,16 @@
     </div>
   </nav>
 </template>
+
+<script>
+export default {
+  mounted() {
+    const menu = document.querySelector('.hamburger-menu')
+
+    menu.addEventListener('click', () => {
+      menu.classList.toggle('open')
+      document.querySelector('.site-navigation').classList.toggle('show')
+    })
+  }
+}
+</script>
