@@ -2,7 +2,8 @@
 
 Route::group([
     'middleware' => 'web',
-    'namespace' => 'Web'
+    'namespace' => 'Web',
+    'prefix' => 'admin'
 ], function () {
 
     Route::get('/', 'HomeController@index', ['middleware' => 'auth'])->name('home');

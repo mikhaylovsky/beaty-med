@@ -68,9 +68,9 @@ services:
       - 54321:5432
     environment:
       - LC_ALL=C.UTF-8
-      - POSTGRES_DB=app
-      - POSTGRES_USER=app
-      - POSTGRES_PASSWORD=app
+      - POSTGRES_DB=beautymed_db
+      - POSTGRES_USER=beautymed_user
+      - POSTGRES_PASSWORD=qwerty123
 
   # PostgreSQL testing database container
   postgres-testing:
@@ -79,9 +79,9 @@ services:
       dockerfile: Dockerfile
     environment:
       - LC_ALL=C.UTF-8
-      - POSTGRES_DB=app
-      - POSTGRES_USER=app
-      - POSTGRES_PASSWORD=app
+      - POSTGRES_DB=beautymed_db
+      - POSTGRES_USER=beautymed_user
+      - POSTGRES_PASSWORD=qwerty123
 
   # Node command line container
   node-cli:
