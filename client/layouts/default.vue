@@ -3,9 +3,9 @@
     <header class="site-header">
       <NavBar />
 
-      <no-ssr v-if="(pageType === 'main-page')">
+      <client-only v-if="(pageType === 'main-page')">
         <Slider v-if="sliderSlides.length" :slides="sliderSlides" :options="sliderOptions" />
-      </no-ssr>
+      </client-only>
 
       <div v-else class="container">
         <div class="row">
@@ -17,7 +17,7 @@
         </div>
       </div>
 
-      <img v-if="(pageType === 'single-page')" class="header-img" :src="`/images/${pageBackground}`" alt="">
+      <img v-if="(pageType === 'single-page')" :src="`/images/${pageBackground}`" class="header-img" alt="">
     </header>
 
     <nuxt />

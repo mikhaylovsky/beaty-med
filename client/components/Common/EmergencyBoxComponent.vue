@@ -5,7 +5,7 @@
     </h2>
 
     <div class="call-btn button gradient-bg">
-      <a class="d-flex justify-content-center align-items-center" :href="`tel:${phone.replace(/ /g, '')}`">
+      <a :href="`tel:${phone.replace(/ /g, '')}`" class="d-flex justify-content-center align-items-center">
         <img src="~assets/images/emergency-call.png" alt="phone">
         <span>{{ phone }}</span>
       </a>

@@ -4,7 +4,7 @@
       Make an Appointment
     </h2>
 
-    <form class="d-flex flex-wrap justify-content-between" method="post" @submit.prevent="submit">
+    <form @submit.prevent="submit" class="d-flex flex-wrap justify-content-between" method="post">
       <ul v-if="errors.length" class="errors w-100 list-unstyled">
         <li v-for="(error, index) in errors" :key="index">
           {{ error }}
@@ -31,7 +31,7 @@
 
       <input v-model="formData.phone" type="text" placeholder="Phone No">
 
-      <input class="button gradient-bg" type="submit" value="Boom Appoitnment" :disabled="!formData.name || !formData.phone">
+      <input :disabled="!formData.name || !formData.phone" class="button gradient-bg" type="submit" value="Boom Appoitnment">
     </form>
   </div>
 </template>
