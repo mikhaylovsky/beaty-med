@@ -5,7 +5,7 @@
         <div class="col-12 col-lg-8 offset-lg-2">
           <h2>Subscribe to our newsletter</h2>
 
-          <form method="post" @submit.prevent="submit">
+          <form @submit.prevent="submit" method="post">
             <input v-model="email" type="email" placeholder="E-mail address">
             <p v-if="error" class="error-text">
               {{ error }}
@@ -31,7 +31,7 @@ export default {
     }
   },
   methods: {
-    submit(event) {
+    submit() {
       this.error = this.success = ''
 
       this.$axios.post('https://jsonplaceholder.typicode.com/todos/1', { email: this.email })
@@ -42,7 +42,7 @@ export default {
             this.error = response.data.message
           }
         })
-        .catch((error) => {
+        .catch(() => {
           this.error = 'Server error, please try again later!'
         })
 
