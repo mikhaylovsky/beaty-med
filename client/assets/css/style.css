@@ -401,9 +401,6 @@ a:hover, a:active {
 /*
 # Content
 ----------------------------------*/
-.accordion-wrap .entry-content {
-    display: none;
-}
 
 .accordion-wrap .entry-content p {
     padding: 10px 0;
@@ -867,7 +864,7 @@ ul.tabs-nav .tab-nav.active {
 
 .testimonial-slider-wrap {
     position: relative;
-    padding: 72px 100px;
+    padding: 72px 100px !important;
     border-radius: 20px;
     background: #fff;
     box-shadow: 40px 20px 27px rgba(0,0,0,.1);
@@ -969,19 +966,19 @@ ul.tabs-nav .tab-nav.active {
 }
 
 .testimonial-slider .swiper-pagination-bullet:nth-of-type(1) {
-    background: url("../images/user-1.jpg");
+    background: url("../../static/images/testimonials-slider/user-1.jpg");
 }
 
 .testimonial-slider .swiper-pagination-bullet:nth-of-type(2) {
-    background: url("../images/user-2.jpg");
+    background: url("../../static/images/testimonials-slider/user-2.jpg");
 }
 
 .testimonial-slider .swiper-pagination-bullet:nth-of-type(3) {
-    background: url("../images/user-3.jpg");
+    background: url("../../static/images/testimonials-slider/user-3.jpg");
 }
 
 .testimonial-slider .swiper-pagination-bullet:nth-of-type(4) {
-    background: url("../images/user-4.jpg");
+    background: url("../../static/images/testimonials-slider/user-4.jpg");
 }
 
 .testimonial-slider .swiper-pagination-bullet-active {

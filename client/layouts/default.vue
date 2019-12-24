@@ -3,9 +3,9 @@
     <header class="site-header">
       <NavBar />
 
-      <no-ssr v-if="(pageType === 'main-page')">
+      <client-only v-if="(pageType === 'main-page')">
         <Slider v-if="sliderSlides.length" :slides="sliderSlides" :options="sliderOptions" />
-      </no-ssr>
+      </client-only>
 
       <div v-else class="container">
         <div class="row">
@@ -17,7 +17,7 @@
         </div>
       </div>
 
-      <img v-if="(pageType === 'single-page')" class="header-img" :src="`images/${pageBackground}`" alt="">
+      <img v-if="(pageType === 'single-page')" :src="`/images/${pageBackground}`" class="header-img" alt="">
     </header>
 
     <nuxt />
@@ -30,11 +30,11 @@
 
 <script>
 import { mapGetters } from 'vuex'
-import NavBar from '~/components/NavBarComponent'
-import Breadcrumbs from '~/components/BreadcrumbsComponent'
-import Slider from '~/components/SliderComponent'
-import NewsSubscription from '~/components/NewsSubscriptionComponent'
-import Footer from '~/components/FooterComponent'
+import NavBar from '~/components/Layout/Header/NavBarComponent'
+import Breadcrumbs from '~/components/Layout/Header/BreadcrumbsComponent'
+import Slider from '~/components/Layout/Header/HeaderSliderComponent'
+import NewsSubscription from '~/components/Common/NewsSubscriptionComponent'
+import Footer from '~/components/Layout/FooterComponent'
 
 export default {
   components: {

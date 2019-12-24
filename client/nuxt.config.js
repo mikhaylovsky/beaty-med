@@ -18,12 +18,11 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { color: '#ff0000' },
   /*
   ** Global CSS
   */
   css: [
-    '~/node_modules/bootstrap/dist/css/bootstrap.css',
     '@assets/css/style.css',
     '@assets/sass/main.sass'
   ],
@@ -31,7 +30,6 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@plugins/bootstrap.js',
     { src: '@plugins/vue-swiper.js', mode: 'client' }
   ],
   /*
@@ -39,10 +37,26 @@ export default {
   */
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
+    'bootstrap-vue/nuxt',
     '@nuxtjs/axios',
     '@nuxtjs/eslint-module',
     '@nuxtjs/font-awesome'
   ],
+  router: {
+    // Manually add children to blog page for reactive filtration by categories
+    extendRoutes(routes, resolve) {
+      const index = routes.findIndex(route => route.name === 'blog-category-page')
+      routes[index] = {
+        path: routes[index].path,
+        component: routes[index].component,
+        children: [{
+          path: '',
+          component: resolve(__dirname, 'components/Blog/BlogGridComponent.vue'),
+          name: routes[index].name
+        }]
+      }
+    }
+  },
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
@@ -53,7 +67,7 @@ export default {
   ** Build configuration
   */
   build: {
-    vendor: ['jquery', 'bootstrap'],
+    vendor: [],
 
     /*
     ** You can extend webpack config here
