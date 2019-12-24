@@ -11,6 +11,10 @@
 |
 */
 
+Route::get('/test', function () {
+    return response()->json(['test' => 'success'])->header('Access-Control-Allow-Origin', '*');
+});
+
 Route::middleware('auth:api')->group(function () {
     Route::get('dashboard', function () {
         return response()->json(['data' => 'Test Data']);

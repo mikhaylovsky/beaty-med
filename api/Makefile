@@ -24,13 +24,6 @@ logs:
 # Restart all containers
 restart: down up
 
-# Restart the node container
-restart-node:
-	docker-compose restart node
-
-# Restart the node container alias
-rn: restart-node
-
 # Build and up docker containers
 build:
 	docker-compose up -d --build
@@ -136,16 +129,12 @@ tinker:
 
 # Copy the Laravel API environment file
 env-api:
-	cp .env.api api/.env
-
-# Copy the NuxtJS environment file
-env-client:
-	cp .env.client client/.env
+	cp .env.example .env
 
 # Add permissions for Laravel cache and storage folders
 permissions:
-	sudo chmod -R 777 api/bootstrap/cache
-	sudo chmod -R 777 api/storage
+	sudo chmod -R 777 bootstrap/cache
+	sudo chmod -R 777 storage
 
 # Generate a Laravel app key
 key:
@@ -156,15 +145,4 @@ autoload:
 	docker-compose exec php-cli composer dump-autoload
 
 # Install the environment
-install: build composer-install env-api env-client key permissions rn
-
-#-----------------------------------------------------------
-# Git commands
-#-----------------------------------------------------------
-
-git-undo:
-	git reset --soft HEAD~1
-
-git-wip:
-	git add .
-	git commit -m "WIP"
+install: build composer-install env-api key permissions

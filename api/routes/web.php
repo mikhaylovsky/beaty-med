@@ -14,7 +14,7 @@ Route::group([
     /**
      *Auth routes
      */
-    Route::get('/login', 'Auth\LoginController@showLoginForm');
+    Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
     Route::post('/login', 'Auth\LoginController@store');
 
     Route::get('/logout', 'Auth\LoginController@destroy');
@@ -46,21 +46,3 @@ Route::group([
 
 
 });
-
-
-Route::group([
-    'middleware' => ['api'],
-    'namespace' => 'Api',
-    'prefix' => 'api'
-], function () {
-
-    Route::get('/', function () {
-        return view('app');
-    });
-
-    Route::post('/login', 'Auth\AuthController@login');
-    Route::post('/logout', 'Auth\AuthController@logout');
-    Route::post('/refresh', 'Auth\AuthController@refresh');
-    Route::post('/me', 'Auth\AuthController@me');
-});
-
