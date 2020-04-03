@@ -11,7 +11,7 @@ services:
       - ./docker/nginx/logs:/var/log/nginx/beatymed/api
     ports:
       # Api port
-      - 8082:82
+      - 8089:89
     links:
       - php-fpm
 
