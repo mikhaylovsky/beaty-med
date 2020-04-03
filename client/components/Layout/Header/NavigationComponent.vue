@@ -3,27 +3,27 @@
     <ul class="d-flex flex-column flex-lg-row justify-content-lg-end align-items-center">
       <li>
         <nuxt-link :to="{ name: 'index' }" exact>
-          Home
+          {{ $t('layout.header.navigation.home') }}
         </nuxt-link>
       </li>
       <li>
         <nuxt-link :to="{ name: 'about' }">
-          About us
+          {{ $t('layout.header.navigation.about') }}
         </nuxt-link>
       </li>
       <li>
         <nuxt-link :to="{ name: 'services' }">
-          Services
+          {{ $t('layout.header.navigation.services') }}
         </nuxt-link>
       </li>
       <li>
         <nuxt-link :to="{ name: 'blog-category-page' }">
-          News
+          {{ $t('layout.header.navigation.news') }}
         </nuxt-link>
       </li>
       <li>
         <nuxt-link :to="{ name: 'contact' }">
-          Contact
+          {{ $t('layout.header.navigation.contact') }}
         </nuxt-link>
       </li>
 

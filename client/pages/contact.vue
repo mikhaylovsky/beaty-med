@@ -6,7 +6,7 @@
           <div class="col-12 col-md-4">
             <div class="contact-info h-100">
               <h2 class="d-flex align-items-center">
-                Contact Info
+                {{ $t('contact.info') }}
               </h2>
 
               <ul class="p-0 m-0">

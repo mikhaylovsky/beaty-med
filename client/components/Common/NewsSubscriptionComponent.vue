@@ -5,7 +5,7 @@
         <div class="col-12 col-lg-8 offset-lg-2">
           <h2>Subscribe to our newsletter</h2>
 
-          <form @submit.prevent="submit" method="post">
+          <form method="post" @submit.prevent="submit">
             <input v-model="email" type="email" placeholder="E-mail address">
             <p v-if="error" class="error-text">
               {{ error }}

@@ -4,7 +4,7 @@
       Make an Appointment
     </h2>
 
-    <form @submit.prevent="submit" class="d-flex flex-wrap justify-content-between" method="post">
+    <form class="d-flex flex-wrap justify-content-between" method="post" @submit.prevent="submit">
       <ul v-if="errors.length" class="errors w-100 list-unstyled">
         <li v-for="(error, index) in errors" :key="index">
           {{ error }}
