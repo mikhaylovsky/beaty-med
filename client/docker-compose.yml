@@ -13,7 +13,7 @@ services:
       - ./docker/nginx/logs:/var/log/nginx/beautymed/client
     ports:
       # Nuxt port
-      - 8081:81
+      - 8088:88
     links:
       - node
 
