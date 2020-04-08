@@ -2,20 +2,20 @@
 <html lang="en">
 
 <head>
-    @include('layout.partials.head')
+    @include('layouts.partials.head')
 </head>
 
 <body>
     <div class="wrapper ">
 
         <div class="top-right links">
-            @include('layout.partials.sidebar')
+            @include('layouts.partials.sidebar')
             <div class="main-panel">
-            @include('layout.partials.panel')
+            @include('layouts.partials.panel')
 
                 @yield('content')
             </div>
-            @include('layout.partials.footer-scripts')
+            @include('layouts.partials.footer-scripts')
         </div>
     </div>
  </body>

@@ -1,5 +1,9 @@
 <?php
 
+Route::get('/', function () {
+    return redirect()->route('home');
+});
+
 Route::group([
     'middleware' => 'web',
     'namespace' => 'Web',
@@ -15,16 +19,16 @@ Route::group([
      *Auth routes
      */
     Route::get('/login', 'Auth\LoginController@showLoginForm')->name('login');
-    Route::post('/login', 'Auth\LoginController@store');
+    Route::post('/login', 'Auth\LoginController@store')->name('login.attempt');
 
-    Route::get('/logout', 'Auth\LoginController@destroy');
+    Route::get('/logout', 'Auth\LoginController@destroy')->name('logout');
 
     Route::get('/register', 'Auth\RegistrationController@showRegistrationForm');
     Route::post('/register', 'Auth\RegistrationController@store');
 
-    Route::get('/reset', 'Auth\ResetPasswordController@showLinkRequestForm');
+    Route::get('/reset', 'Auth\ResetPasswordController@showLinkRequestForm')->name('login.reset');
 //    Route::post('/reset', 'Auth\ResetPasswordController@postEmail')->name('password.reset');
-    Route::post('/reset', 'Auth\ResetPasswordController@sendResetLinkEmail');
+    Route::post('/reset', 'Auth\ResetPasswordController@sendResetLinkEmail')->name('reset.attempt');
 
     Route::get('reset/{token}', 'Auth\ResetFormController@showResetForm');
     Route::post('password/reset', 'Auth\ResetFormController@reset');

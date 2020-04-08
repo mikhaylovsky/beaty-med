@@ -11,6 +11,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 //Auth facade
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
 
 class LoginController extends Controller
 {
@@ -22,19 +23,20 @@ class LoginController extends Controller
 ////        $this->middleware('guest', ['except' => 'destroy']);
 //    }
 
+    /**
+     * @return array|\Illuminate\Contracts\View\Factory|\Illuminate\View\View|mixed
+     */
     public function showLoginForm()
     {
-        return view('auth.login.create');
+        return view('auth.login');
     }
 
     public function store(Request $request)
     {
-
         if (!auth('web')->attempt(request(['email', 'password']))) {
             return back()->withErrors([
                 'message' => 'Please check your credentials and try again.'
-
-            ]);
+            ])->withInput(Input::except('password'));
         } else {
             return redirect('/');
         }

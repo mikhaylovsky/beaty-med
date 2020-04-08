@@ -17,12 +17,18 @@ class ResetPasswordController extends Controller
 
     public function showLinkRequestForm()
     {
-        return view('auth.reset.reset');
+        return view('auth.password-reset');
     }
 
     public function sendResetLinkEmail(Request $request)
     {
         $user = User::where('email', $request['email'])->first();
+
+        if (!$user) {
+            return back()->withErrors([
+                'message' => 'E-mail not found!'
+            ])->withInput();
+        }
 
         $user->notify(new ResetPasswordEmailNotification($request->only('_token')['_token']));
 

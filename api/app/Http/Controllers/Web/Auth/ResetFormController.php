@@ -23,7 +23,7 @@ class ResetFormController extends Controller
     //Show form to seller where they can save new password
     public function showResetForm(Request $request, $token = null)
     {
-        return view('auth.reset.resetForm')->with(
+        return view('auth.password-reset')->with(
             ['token' => $token, 'email' => $request['email']]
         );
     }
